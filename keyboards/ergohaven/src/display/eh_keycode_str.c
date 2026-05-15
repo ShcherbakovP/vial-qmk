@@ -468,7 +468,37 @@ bool special_keycode_str(char *buf, uint16_t keycode) {
             sprintf(buf, "Undf");
             return true;
 
-        case QK_MACRO ... QK_MACRO_MAX:
+        case QK_MACRO + 0:
+            sprintf(buf, EH_SYMBOL_SETTINGS);
+            return true;
+        case QK_MACRO + 1:
+            sprintf(buf, EH_SYMBOL_CLOSE "\nClear");
+            return true;
+        case QK_MACRO + 2:
+            sprintf(buf, EH_SYMBOL_SETTINGS "\nMCP");
+            return true;
+        case QK_MACRO + 3:
+            sprintf(buf, EH_SYMBOL_INFO "\nHelp");
+            return true;
+        case QK_MACRO + 4:
+            sprintf(buf, EH_SYMBOL_CALC "\nCost");
+            return true;
+        case QK_MACRO + 5:
+            sprintf(buf, EH_SYMBOL_OK "\nCmt");
+            return true;
+        case QK_MACRO + 6:
+            sprintf(buf, EH_SYMBOL_HOME "\nInit");
+            return true;
+        case QK_MACRO + 7:
+            sprintf(buf, EH_SYMBOL_SEARCH "\nRvw");
+            return true;
+        case QK_MACRO + 8:
+            sprintf(buf, EH_SYMBOL_HEART "\nIdea");
+            return true;
+        case QK_MACRO + 9:
+            sprintf(buf, EH_SYMBOL_GLOBE "\nFeat");
+            return true;
+        case QK_MACRO + 10 ... QK_MACRO_MAX:
             sprintf(buf, "M%d", keycode - QK_MACRO);
             return true;
         case QK_TAP_DANCE ... QK_TAP_DANCE_MAX:
@@ -476,23 +506,54 @@ bool special_keycode_str(char *buf, uint16_t keycode) {
             return true;
 
         case C(KC_Z):
-            sprintf(buf, EH_SYMBOL_ROTATE_LEFT "\n" EH_SYMBOL_CTL "Z");
+            sprintf(buf, EH_SYMBOL_ROTATE_LEFT);
             return true;
         case C(KC_X):
-            sprintf(buf, EH_SYMBOL_CUT "\n" EH_SYMBOL_CTL "X");
+            sprintf(buf, EH_SYMBOL_CUT);
             return true;
         case C(KC_C):
-            sprintf(buf, EH_SYMBOL_COPY "\n" EH_SYMBOL_CTL "C");
+            sprintf(buf, EH_SYMBOL_COPY);
             return true;
         case C(KC_V):
-            sprintf(buf, EH_SYMBOL_PASTE "\n" EH_SYMBOL_CTL "V");
+            sprintf(buf, EH_SYMBOL_PASTE);
             return true;
-        
+
         case LCTL(LSFT(KC_7)):
-            sprintf(buf,EH_SYMBOL_IMAGE);
+            sprintf(buf, EH_SYMBOL_IMAGE);
+            return true;
+        case LCTL(LSFT(KC_8)):
+            sprintf(buf, EH_SYMBOL_SPC "\n" EH_SYMBOL_IMAGE);
             return true;
         case LALT(KC_V):
-            sprintf(buf,EH_SYMBOL_PASTE);
+            sprintf(buf, EH_SYMBOL_ALT "\n" EH_SYMBOL_PASTE);
+            return true;
+
+        case LG_LBR:
+            sprintf(buf, "[");
+            return true;
+        case LG_RBR:
+            sprintf(buf, "]");
+            return true;
+        case LG_LCBR:
+            sprintf(buf, "{");
+            return true;
+        case LG_RCBR:
+            sprintf(buf, "}");
+            return true;
+        case LG_LT:
+            sprintf(buf, "<");
+            return true;
+        case LG_GT:
+            sprintf(buf, ">");
+            return true;
+        case LG_AMPR:
+            sprintf(buf, "&");
+            return true;
+        case LG_PIPE:
+            sprintf(buf, "|");
+            return true;
+        case LG_AT:
+            sprintf(buf, "@");
             return true;
 
         case EH_PRINFO:
