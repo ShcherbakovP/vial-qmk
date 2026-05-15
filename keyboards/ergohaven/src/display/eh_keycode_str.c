@@ -487,6 +487,13 @@ bool special_keycode_str(char *buf, uint16_t keycode) {
         case C(KC_V):
             sprintf(buf, EH_SYMBOL_PASTE "\n" EH_SYMBOL_CTL "V");
             return true;
+        
+        case LCTL(LSFT(KC_7)):
+            sprintf(buf,EH_SYMBOL_IMAGE);
+            return true;
+        case LALT(KC_V):
+            sprintf(buf,EH_SYMBOL_PASTE);
+            return true;
 
         case EH_PRINFO:
             sprintf(buf, "Prnt\nInfo");
