@@ -19,7 +19,7 @@
 
 #define OLED_FONT_H "src/oled/eh_oled_font.c"
 #define OLED_TIMEOUT 0
-#define EH_TIMEOUT (10 * 60 * 1000) // 10 minutes
+#define EH_TIMEOUT (6UL * 60 * 60 * 1000) // 6 hours
 
 #define TAPPING_TOGGLE 5
 
