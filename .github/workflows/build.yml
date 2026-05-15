@@ -1,0 +1,30 @@
+  name: Build M4CR0Pad v3
+  on:
+    push:
+      branches: [ergohaven]
+    workflow_dispatch:
+
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      container:
+        image: ghcr.io/qmk/qmk_cli      steps:
+        - uses:
+  actions/checkout@v4
+          with:
+            submodules: recursive
+        - name: Setup QMK
+  userspace
+          run: qmk config
+  user.overlay_dir="$(realpath .)"   && qmk doctor -n || true
+        - name: Build
+          run: |
+            make git-submodule
+            qmk compile -kb
+  ergohaven/macropad/rev3 -km v3
+        - uses:
+  actions/upload-artifact@v4
+          with:
+            name:
+  macropad_v3_firmware
+            path: '*.uf2'
