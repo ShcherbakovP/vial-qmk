@@ -528,34 +528,6 @@ bool special_keycode_str(char *buf, uint16_t keycode) {
             sprintf(buf, EH_SYMBOL_ALT "\n" EH_SYMBOL_PASTE);
             return true;
 
-        case LG_LBR:
-            sprintf(buf, "[");
-            return true;
-        case LG_RBR:
-            sprintf(buf, "]");
-            return true;
-        case LG_LCBR:
-            sprintf(buf, "{");
-            return true;
-        case LG_RCBR:
-            sprintf(buf, "}");
-            return true;
-        case LG_LT:
-            sprintf(buf, "<");
-            return true;
-        case LG_GT:
-            sprintf(buf, ">");
-            return true;
-        case LG_AMPR:
-            sprintf(buf, "&");
-            return true;
-        case LG_PIPE:
-            sprintf(buf, "|");
-            return true;
-        case LG_AT:
-            sprintf(buf, "@");
-            return true;
-
         case EH_PRINFO:
             sprintf(buf, "Prnt\nInfo");
             return true;
@@ -677,22 +649,22 @@ bool special_keycode_str(char *buf, uint16_t keycode) {
             sprintf(buf, "RuEn\n/");
             return true;
         case LG_LBR:
-            sprintf(buf, "RuEn\n[");
+            sprintf(buf, "[");
             return true;
         case LG_RBR:
-            sprintf(buf, "RuEn\n]");
+            sprintf(buf, "]");
             return true;
         case LG_LCBR:
-            sprintf(buf, "RuEn\n{");
+            sprintf(buf, "{");
             return true;
         case LG_RCBR:
-            sprintf(buf, "RuEn\n}");
+            sprintf(buf, "}");
             return true;
         case LG_LT:
-            sprintf(buf, "RuEn\n<");
+            sprintf(buf, "<");
             return true;
         case LG_GT:
-            sprintf(buf, "RuEn\n>");
+            sprintf(buf, ">");
             return true;
         case LG_GRAVE:
             sprintf(buf, "RuEn\n`");
@@ -701,7 +673,7 @@ bool special_keycode_str(char *buf, uint16_t keycode) {
             sprintf(buf, "RuEn\n~");
             return true;
         case LG_AT:
-            sprintf(buf, "RuEn\n@");
+            sprintf(buf, "@");
             return true;
         case LG_HASH:
             sprintf(buf, "RuEn\n#");
@@ -713,10 +685,10 @@ bool special_keycode_str(char *buf, uint16_t keycode) {
             sprintf(buf, "RuEn\n^");
             return true;
         case LG_AMPR:
-            sprintf(buf, "RuEn\n&");
+            sprintf(buf, "&");
             return true;
         case LG_PIPE:
-            sprintf(buf, "RuEn\n|");
+            sprintf(buf, "|");
             return true;
         case LG_QUOTE:
             sprintf(buf, "RuEn\n'");
